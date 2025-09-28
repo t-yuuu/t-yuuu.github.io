@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Data Analyst & Engineer</title>
+    <title>Terry Yu - Analytics Engineer & Data Scientist</title>
     <style>
         * {
             margin: 0;
@@ -12,11 +12,27 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0a0a0a;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
             color: #e0e0e0;
             line-height: 1.6;
             overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated background particles */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(255, 107, 107, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
         }
 
         .container {
@@ -27,62 +43,84 @@
 
         /* Header */
         header {
-            padding: 60px 0;
+            padding: 80px 0;
             text-align: center;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+            position: relative;
         }
 
         .hero {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+            position: relative;
         }
 
         h1 {
-            font-size: 3.5rem;
-            font-weight: 300;
+            font-size: 4rem;
+            font-weight: 200;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 20px rgba(102, 126, 234, 0.3)); }
+            to { filter: drop-shadow(0 0 30px rgba(118, 75, 162, 0.5)); }
         }
 
         .subtitle {
-            font-size: 1.3rem;
-            color: #888;
-            margin-bottom: 30px;
+            font-size: 1.4rem;
+            color: #aaa;
+            margin-bottom: 40px;
+            font-weight: 300;
         }
 
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 40px;
             flex-wrap: wrap;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 12px;
             color: #aaa;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            padding: 12px 20px;
+            border-radius: 25px;
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid rgba(102, 126, 234, 0.2);
         }
 
         .contact-item:hover {
             color: #667eea;
+            background: rgba(102, 126, 234, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
         }
 
         /* Navigation */
         nav {
-            padding: 20px 0;
+            padding: 25px 0;
             text-align: center;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 50px;
             flex-wrap: wrap;
         }
 
@@ -90,12 +128,16 @@
             color: #aaa;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
             position: relative;
+            padding: 10px 20px;
+            border-radius: 20px;
         }
 
         nav a:hover {
             color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+            transform: translateY(-2px);
         }
 
         nav a::after {
@@ -103,20 +145,22 @@
             position: absolute;
             width: 0;
             height: 2px;
-            bottom: -5px;
-            left: 0;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             transition: width 0.3s ease;
         }
 
         nav a:hover::after {
-            width: 100%;
+            width: 80%;
         }
 
         /* Sections */
         section {
-            padding: 80px 0;
-            border-bottom: 1px solid #333;
+            padding: 100px 0;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+            position: relative;
         }
 
         section:last-child {
@@ -124,11 +168,24 @@
         }
 
         h2 {
-            font-size: 2.5rem;
-            font-weight: 300;
-            margin-bottom: 50px;
+            font-size: 3rem;
+            font-weight: 200;
+            margin-bottom: 60px;
             text-align: center;
             color: #fff;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
         }
 
         h3 {
@@ -151,54 +208,76 @@
         /* Education */
         .education-item {
             margin-bottom: 40px;
-            padding: 30px;
-            background: rgba(102, 126, 234, 0.05);
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.05) 100%);
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            position: relative;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.1);
         }
 
         .degree {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: #aaa;
             margin-bottom: 10px;
+            font-weight: 500;
         }
 
         .school {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: #fff;
             margin-bottom: 5px;
+            font-weight: 600;
         }
 
         .date {
             color: #888;
-            font-size: 0.9rem;
+            font-size: 1rem;
+            font-weight: 300;
         }
 
         /* Experience */
         .experience-item {
-            margin-bottom: 50px;
-            padding: 30px;
-            background: rgba(118, 75, 162, 0.05);
-            border-radius: 10px;
-            border-left: 4px solid #764ba2;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(118, 75, 162, 0.1) 0%, rgba(102, 126, 234, 0.05) 100%);
+            border-radius: 15px;
+            border-left: 5px solid #764ba2;
+            position: relative;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(118, 75, 162, 0.1);
         }
 
         .company {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             color: #fff;
             margin-bottom: 5px;
+            font-weight: 600;
         }
 
         .position {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: #667eea;
             margin-bottom: 10px;
+            font-weight: 500;
         }
 
         .location {
             color: #888;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
+            font-size: 1rem;
+            margin-bottom: 25px;
+            font-weight: 300;
         }
 
         .achievements {
@@ -206,53 +285,80 @@
         }
 
         .achievements li {
-            margin-bottom: 12px;
-            padding-left: 20px;
+            margin-bottom: 15px;
+            padding-left: 25px;
             position: relative;
             color: #ccc;
+            line-height: 1.7;
+            transition: all 0.3s ease;
+        }
+
+        .achievements li:hover {
+            color: #fff;
+            transform: translateX(5px);
         }
 
         .achievements li::before {
-            content: '●';
+            content: '▶';
             color: #667eea;
             position: absolute;
             left: 0;
             top: 0;
+            font-size: 0.8rem;
         }
 
         /* Skills */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
         }
 
         .skill-category {
             text-align: center;
-            padding: 20px;
-            background: rgba(102, 126, 234, 0.05);
-            border-radius: 10px;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.05) 100%);
+            border-radius: 15px;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.1);
         }
 
         .skill-category h4 {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             color: #667eea;
+            font-size: 1.3rem;
+            font-weight: 600;
         }
 
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 10px;
             justify-content: center;
         }
 
         .skill-tag {
-            background: rgba(102, 126, 234, 0.2);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.2) 100%);
             color: #e0e0e0;
-            padding: 5px 12px;
-            border-radius: 20px;
+            padding: 8px 16px;
+            border-radius: 25px;
             font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.4) 0%, rgba(118, 75, 162, 0.3) 100%);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
         }
 
         /* Footer */
@@ -324,19 +430,15 @@
     <header>
         <div class="container">
             <div class="hero">
-                <h1>Your Name</h1>
-                <p class="subtitle">Data Analyst & Engineer | Business Intelligence Specialist</p>
+                <h1>Terry Yu</h1>
+                <p class="subtitle">Analytics Engineer & Data Scientist | Business Intelligence Specialist</p>
             </div>
             <div class="contact-info">
-                <a href="mailto:your.email@example.com" class="contact-item">
-                    <span>📧</span>
-                    <span>your.email@example.com</span>
-                </a>
-                <a href="https://linkedin.com/in/yourprofile" class="contact-item">
+                <a href="https://www.linkedin.com/in/terry-yu-b96447229/" class="contact-item">
                     <span>💼</span>
                     <span>LinkedIn</span>
                 </a>
-                <a href="https://github.com/yourusername" class="contact-item">
+                <a href="https://github.com/t-yuuu" class="contact-item">
                     <span>🐙</span>
                     <span>GitHub</span>
                 </a>
@@ -361,9 +463,9 @@
             <div class="container">
                 <h2>About</h2>
                 <div class="section-content">
-                    <p style="font-size: 1.1rem; text-align: center; color: #ccc; max-width: 600px; margin: 0 auto;">
-                        Passionate data professional with expertise in analytics, machine learning, and cloud technologies. 
-                        Proven track record of delivering data-driven solutions that drive business value and operational efficiency.
+                    <p style="font-size: 1.2rem; text-align: center; color: #ccc; max-width: 700px; margin: 0 auto; line-height: 1.8;">
+                        Passionate analytics engineer and data scientist with expertise in ETL pipelines, machine learning, and cloud technologies. 
+                        Proven track record of delivering data-driven solutions that drive business value, reduce costs, and improve operational efficiency across fintech and enterprise environments.
                     </p>
                 </div>
             </div>
@@ -376,7 +478,7 @@
                     <div class="education-item">
                         <div class="school">Santa Clara University, Leavey School of Business</div>
                         <div class="degree">Master of Science in Business Data Analytics</div>
-                        <div class="date">June 2025</div>
+                        <div class="date">Expected December 2025</div>
                     </div>
                     <div class="education-item">
                         <div class="school">UC Riverside, Bourns College of Engineering</div>
@@ -393,26 +495,26 @@
                 <div class="section-content">
                     <div class="experience-item">
                         <div class="company">TabaPay</div>
-                        <div class="position">Data Analyst Intern</div>
+                        <div class="position">Analytics Engineer Intern</div>
                         <div class="location">Palo Alto, California | January 2025 - Present</div>
                         <ul class="achievements">
-                            <li>Analyzed large-scale transaction and payout data using Python and SQL, identifying fraud patterns, transactional anomalies, and performance trends across financial workflows</li>
-                            <li>Built parameterized Redshift stored procedures to centralize query logic, cutting redundant queries and reducing retrieval costs by 30%</li>
-                            <li>Developed interactive Tableau dashboards to visualize KPIs and client portfolios, improving reporting efficiency by 25%</li>
-                            <li>Unified cross-functional workflows by migrating all legacy CRM data to Salesforce and integrating Zendesk/Jira/Confluence</li>
-                            <li>Implemented Salesforce Data Cloud and real-time pipelines to Redshift, cutting dashboard refresh time from 24 hours to 15 minutes</li>
+                            <li>Led deep-dive PAR & RC analysis on high-volume merchants, uncovering fraud and retry anomalies; findings influenced risk policies and guided merchant strategy</li>
+                            <li>Delivered multiple QBR strategy reports for client merchants, analyzing approval trends, fraud patterns, and revenue drivers; directly shaping client's go-forward market strategy</li>
+                            <li>Developed and maintained ETL scripts to extract, transform and load a variety of high‑value payment clearing files into Redshift, ensuring data integrity and timely availability for risk and fraud analytics</li>
+                            <li>Built parameterized Redshift stored procedures and modular data models, reducing query redundancy by 30% and establishing reusable logic for cross-team analytics</li>
+                            <li>Delivered Tableau dashboards and reporting frameworks that standardized KPIs for fraud detection, approval rates, and merchant performance; improved reporting turnaround by 25%</li>
+                            <li>Drove Salesforce Data Cloud integration and real-time Redshift pipelines, reducing data latency from 24h → 15m and strengthening client confidence in reporting</li>
                         </ul>
                     </div>
 
                     <div class="experience-item">
                         <div class="company">Amazon Web Services (AWS)</div>
-                        <div class="position">Data Engineer (Practicum)</div>
-                        <div class="location">San Francisco, California | January 2025 - June 2025</div>
+                        <div class="position">Data Engineer (Co-Op)</div>
+                        <div class="location">Palo Alto, California | January 2025 - June 2025</div>
                         <ul class="achievements">
-                            <li>Built a FinOps chatbot using Amazon Bedrock (LLMs) and Lex, embedding cost data via Titan and indexing with OpenSearch</li>
-                            <li>Developed an XGBoost predictive model on Amazon SageMaker to assess daily cost anomaly risk across 50+ AWS accounts; pushed real-time alerts via EventBridge + Slack, reducing mean time-to-detect by ~8%</li>
-                            <li>Developed QuickSight dashboards powered by Amazon Q to surface AWS spend metrics and enabled ad-hoc cost queries</li>
-                            <li>Automated the ML pipeline with AWS CodePipeline/CodeBuild, enabling scalable, modular Lambda and Step Functions deployments</li>
+                            <li>Automated scalable ML/ETL pipelines with Lambda, Step Functions, and CodePipeline, supporting data ingestion and transformation for cost and usage analytics</li>
+                            <li>Created predictive XGBoost model for daily cost anomalies; real-time alerts reduced detection times by 8% and avoided potential budget overruns</li>
+                            <li>Built a FinOps chatbot powered by Bedrock + Lex, embedding real-time data to surface insights across 50+ accounts</li>
                         </ul>
                     </div>
 
@@ -421,11 +523,11 @@
                         <div class="position">Data Analyst</div>
                         <div class="location">Chicago, Illinois | August 2023 - August 2024</div>
                         <ul class="achievements">
-                            <li>Built prescriptive financial-planning models in Python & R that recommended budget reallocations, improving forecasting accuracy by ~5% and lowering variance by 3%</li>
-                            <li>Validated model impact with causal-inference techniques (difference-in-differences, matching)</li>
-                            <li>Streamlined end-to-end data workflows and automated reporting tools, reducing manual processing time by 35%</li>
-                            <li>Developed real-time Tableau dashboards both internally & for clients, driving executive decision-making and improving operational efficiency by ~30%</li>
-                            <li>Generated $200K+ by leading 6 client data projects; conducted discovery workshops & delivered end-to-end data migration & analytics solutions</li>
+                            <li>Built financial forecasting datasets and modeling pipelines in Python and R, reducing variance by 3% and improving accuracy by 5% for client planning</li>
+                            <li>Applied causal inference methods (DiD, matching) to validate product and engagement programs, surfacing insights that shaped executive investment decisions</li>
+                            <li>Automated reporting workflows, reducing manual effort by 35%, and launched executive dashboards that accelerated board-level decision-making</li>
+                            <li>Led client workshops to define metrics and sources of truth, delivering executive dashboards that supported cross-functional strategy and generated $200K+ in new revenue</li>
+                            <li>Designed and evaluated A/B experiments with standardized data models, improving feature adoption by 12%</li>
                         </ul>
                     </div>
                 </div>
@@ -437,42 +539,52 @@
                 <h2>Technical Skills</h2>
                 <div class="skills-grid">
                     <div class="skill-category">
-                        <h4>Programming Languages</h4>
+                        <h4>Languages & Tools</h4>
                         <div class="skill-tags">
+                            <span class="skill-tag">SQL (Redshift, Snowflake, MySQL)</span>
                             <span class="skill-tag">Python</span>
                             <span class="skill-tag">R</span>
-                            <span class="skill-tag">SQL</span>
-                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">Ruby</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Excel (Advanced)</span>
                         </div>
                     </div>
                     <div class="skill-category">
-                        <h4>Data & Analytics</h4>
+                        <h4>Data Engineering</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">ETL Pipelines</span>
+                            <span class="skill-tag">Data Modeling</span>
+                            <span class="skill-tag">Data Quality Testing</span>
+                            <span class="skill-tag">Version Control</span>
+                            <span class="skill-tag">Salesforce Data Cloud</span>
+                            <span class="skill-tag">AWS (Lambda, Step Functions, SageMaker)</span>
+                            <span class="skill-tag">Airflow</span>
+                            <span class="skill-tag">DBT</span>
+                            <span class="skill-tag">Databricks</span>
+                            <span class="skill-tag">Reverse ETL</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Analytics & BI</h4>
                         <div class="skill-tags">
                             <span class="skill-tag">Tableau</span>
+                            <span class="skill-tag">Power BI</span>
+                            <span class="skill-tag">Looker</span>
                             <span class="skill-tag">QuickSight</span>
-                            <span class="skill-tag">Redshift</span>
-                            <span class="skill-tag">Pandas</span>
-                            <span class="skill-tag">NumPy</span>
+                            <span class="skill-tag">A/B Testing</span>
+                            <span class="skill-tag">KPI Standardization</span>
                         </div>
                     </div>
                     <div class="skill-category">
-                        <h4>Cloud & ML</h4>
+                        <h4>Collaboration & Certifications</h4>
                         <div class="skill-tags">
-                            <span class="skill-tag">AWS</span>
-                            <span class="skill-tag">SageMaker</span>
-                            <span class="skill-tag">Bedrock</span>
-                            <span class="skill-tag">XGBoost</span>
-                            <span class="skill-tag">Lambda</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Tools & Platforms</h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Salesforce</span>
-                            <span class="skill-tag">Git</span>
-                            <span class="skill-tag">Docker</span>
-                            <span class="skill-tag">Jira</span>
-                            <span class="skill-tag">Confluence</span>
+                            <span class="skill-tag">Cross-functional Stakeholder Alignment</span>
+                            <span class="skill-tag">Metric Definition</span>
+                            <span class="skill-tag">Data-driven Storytelling</span>
+                            <span class="skill-tag">Salesforce Data Cloud Consultant</span>
+                            <span class="skill-tag">SnowFlake</span>
+                            <span class="skill-tag">PwC Digital Assurance Simulation</span>
                         </div>
                     </div>
                 </div>
@@ -483,19 +595,15 @@
             <div class="container">
                 <h2>Get In Touch</h2>
                 <div class="section-content">
-                    <p style="text-align: center; font-size: 1.1rem; color: #ccc; margin-bottom: 30px;">
-                        I'm always interested in new opportunities and collaborations. Let's connect!
+                    <p style="text-align: center; font-size: 1.2rem; color: #ccc; margin-bottom: 40px; line-height: 1.8;">
+                        I'm always interested in new opportunities and collaborations in data engineering, analytics, and machine learning. Let's connect!
                     </p>
                     <div class="contact-info">
-                        <a href="mailto:your.email@example.com" class="contact-item">
-                            <span>📧</span>
-                            <span>your.email@example.com</span>
-                        </a>
-                        <a href="https://linkedin.com/in/yourprofile" class="contact-item">
+                        <a href="https://www.linkedin.com/in/terry-yu-b96447229/" class="contact-item">
                             <span>💼</span>
                             <span>LinkedIn</span>
                         </a>
-                        <a href="https://github.com/yourusername" class="contact-item">
+                        <a href="https://github.com/t-yuuu" class="contact-item">
                             <span>🐙</span>
                             <span>GitHub</span>
                         </a>
@@ -507,7 +615,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Your Name. All rights reserved.</p>
+            <p>&copy; 2025 Terry Yu. All rights reserved.</p>
         </div>
     </footer>
 
