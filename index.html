@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Data Analyst & Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+
+        .hero {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item:hover {
+            color: #667eea;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #aaa;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 50px;
+            text-align: center;
+            color: #fff;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .section-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .degree {
+            font-size: 1.1rem;
+            color: #aaa;
+            margin-bottom: 10px;
+        }
+
+        .school {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .date {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 50px;
+            padding: 30px;
+            background: rgba(118, 75, 162, 0.05);
+            border-radius: 10px;
+            border-left: 4px solid #764ba2;
+        }
+
+        .company {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .position {
+            font-size: 1.1rem;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .location {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .achievements {
+            list-style: none;
+        }
+
+        .achievements li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+            color: #ccc;
+        }
+
+        .achievements li::before {
+            content: '●';
+            color: #667eea;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .skill-category {
+            text-align: center;
+            padding: 20px;
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 10px;
+        }
+
+        .skill-category h4 {
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: rgba(102, 126, 234, 0.2);
+            color: #e0e0e0;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            color: #888;
+            border-top: 1px solid #333;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            section {
+                padding: 50px 0;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .education-item,
+            .experience-item {
+                padding: 20px;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .education-item,
+        .experience-item {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="hero">
+                <h1>Your Name</h1>
+                <p class="subtitle">Data Analyst & Engineer | Business Intelligence Specialist</p>
+            </div>
+            <div class="contact-info">
+                <a href="mailto:your.email@example.com" class="contact-item">
+                    <span>📧</span>
+                    <span>your.email@example.com</span>
+                </a>
+                <a href="https://linkedin.com/in/yourprofile" class="contact-item">
+                    <span>💼</span>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/yourusername" class="contact-item">
+                    <span>🐙</span>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="about">
+            <div class="container">
+                <h2>About</h2>
+                <div class="section-content">
+                    <p style="font-size: 1.1rem; text-align: center; color: #ccc; max-width: 600px; margin: 0 auto;">
+                        Passionate data professional with expertise in analytics, machine learning, and cloud technologies. 
+                        Proven track record of delivering data-driven solutions that drive business value and operational efficiency.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <div class="container">
+                <h2>Education</h2>
+                <div class="section-content">
+                    <div class="education-item">
+                        <div class="school">Santa Clara University, Leavey School of Business</div>
+                        <div class="degree">Master of Science in Business Data Analytics</div>
+                        <div class="date">June 2025</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="school">UC Riverside, Bourns College of Engineering</div>
+                        <div class="degree">Bachelor of Science in Data Science</div>
+                        <div class="date">June 2023</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="container">
+                <h2>Professional Experience</h2>
+                <div class="section-content">
+                    <div class="experience-item">
+                        <div class="company">TabaPay</div>
+                        <div class="position">Data Analyst Intern</div>
+                        <div class="location">Palo Alto, California | January 2025 - Present</div>
+                        <ul class="achievements">
+                            <li>Analyzed large-scale transaction and payout data using Python and SQL, identifying fraud patterns, transactional anomalies, and performance trends across financial workflows</li>
+                            <li>Built parameterized Redshift stored procedures to centralize query logic, cutting redundant queries and reducing retrieval costs by 30%</li>
+                            <li>Developed interactive Tableau dashboards to visualize KPIs and client portfolios, improving reporting efficiency by 25%</li>
+                            <li>Unified cross-functional workflows by migrating all legacy CRM data to Salesforce and integrating Zendesk/Jira/Confluence</li>
+                            <li>Implemented Salesforce Data Cloud and real-time pipelines to Redshift, cutting dashboard refresh time from 24 hours to 15 minutes</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="company">Amazon Web Services (AWS)</div>
+                        <div class="position">Data Engineer (Practicum)</div>
+                        <div class="location">San Francisco, California | January 2025 - June 2025</div>
+                        <ul class="achievements">
+                            <li>Built a FinOps chatbot using Amazon Bedrock (LLMs) and Lex, embedding cost data via Titan and indexing with OpenSearch</li>
+                            <li>Developed an XGBoost predictive model on Amazon SageMaker to assess daily cost anomaly risk across 50+ AWS accounts; pushed real-time alerts via EventBridge + Slack, reducing mean time-to-detect by ~8%</li>
+                            <li>Developed QuickSight dashboards powered by Amazon Q to surface AWS spend metrics and enabled ad-hoc cost queries</li>
+                            <li>Automated the ML pipeline with AWS CodePipeline/CodeBuild, enabling scalable, modular Lambda and Step Functions deployments</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="company">Provisio Partners</div>
+                        <div class="position">Data Analyst</div>
+                        <div class="location">Chicago, Illinois | August 2023 - August 2024</div>
+                        <ul class="achievements">
+                            <li>Built prescriptive financial-planning models in Python & R that recommended budget reallocations, improving forecasting accuracy by ~5% and lowering variance by 3%</li>
+                            <li>Validated model impact with causal-inference techniques (difference-in-differences, matching)</li>
+                            <li>Streamlined end-to-end data workflows and automated reporting tools, reducing manual processing time by 35%</li>
+                            <li>Developed real-time Tableau dashboards both internally & for clients, driving executive decision-making and improving operational efficiency by ~30%</li>
+                            <li>Generated $200K+ by leading 6 client data projects; conducted discovery workshops & delivered end-to-end data migration & analytics solutions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Programming Languages</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">R</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Data & Analytics</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Tableau</span>
+                            <span class="skill-tag">QuickSight</span>
+                            <span class="skill-tag">Redshift</span>
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">NumPy</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Cloud & ML</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">SageMaker</span>
+                            <span class="skill-tag">Bedrock</span>
+                            <span class="skill-tag">XGBoost</span>
+                            <span class="skill-tag">Lambda</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Tools & Platforms</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Salesforce</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Jira</span>
+                            <span class="skill-tag">Confluence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <div class="section-content">
+                    <p style="text-align: center; font-size: 1.1rem; color: #ccc; margin-bottom: 30px;">
+                        I'm always interested in new opportunities and collaborations. Let's connect!
+                    </p>
+                    <div class="contact-info">
+                        <a href="mailto:your.email@example.com" class="contact-item">
+                            <span>📧</span>
+                            <span>your.email@example.com</span>
+                        </a>
+                        <a href="https://linkedin.com/in/yourprofile" class="contact-item">
+                            <span>💼</span>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/yourusername" class="contact-item">
+                            <span>🐙</span>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(10, 10, 10, 0.95)';
+                nav.style.backdropFilter = 'blur(10px)';
+            } else {
+                nav.style.background = 'transparent';
+                nav.style.backdropFilter = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
